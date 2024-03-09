@@ -1,7 +1,7 @@
 with open('Madlibs_Generator/story.txt', 'r') as f:
   story = f.read()
 
-words = []
+words = set()
 start_of_word = -1
 
 word_start = '<'
@@ -13,7 +13,7 @@ for i, char in enumerate(story):
 
   if char == word_end and start_of_word != -1:
       word = story[start_of_word: i + 1]
-      words.append(word)
+      words.add(word)
       start_of_word = -1
 
 print(words)

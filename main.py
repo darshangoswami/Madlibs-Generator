@@ -23,4 +23,7 @@ for word in words:
 
    answers[word] = answer
 
-print(answers)
+for word in words:
+   story = story.replace(word, answers[word])
+
+print(story)
